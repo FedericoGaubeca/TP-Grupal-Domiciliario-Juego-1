@@ -45,4 +45,10 @@ public class GameManager : MonoBehaviour
         productLPriceText.text = productoIzquierdaActual.precio.ToString();
         productRPriceText.text = productoDerechaActual.precio.ToString();
     }
+
+    public int ConseguirSumaTotal()
+    {
+        return productoIzquierdaActual.precio + productoDerechaActual.precio;
+    }
+
 }
