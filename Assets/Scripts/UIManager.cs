@@ -29,7 +29,7 @@ public class UIManager : MonoBehaviour
         if (int.TryParse(resultInputField.text, out resultadoPlayer)) //Investigue en google  "como hago para convertir el texto ingresado en el input field a int para poder compararlo con la respuesta correcta?"
         {
             int respuestaCorrecta = gameManager.ConseguirSumaTotal();
-
+                
             if (resultadoPlayer == respuestaCorrecta)
             {
                 notificationPanel.SetActive(true);
@@ -50,5 +50,22 @@ public class UIManager : MonoBehaviour
     public void OnEntiendoButtonClicked()
     {
         mensajePanel.SetActive(false);
+    }
+
+    public void OnRetryButtonClicked()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void OnVolverIntentarButtonClicked()
+    {
+        notificationPanel.SetActive(false);
+        correctText.SetActive(false);
+        incorrectText.SetActive(false);
+    }
+
+    public void OnQuitButtonClocked()
+    {
+        SceneManager.LoadScene("SeleccionarJuegos");
     }
 }
